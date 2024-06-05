@@ -11,10 +11,10 @@ body {
 
 .container {
     background-color: #ffffff;
-    padding: 30px;
+    padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    width: 80%;
+    width: 90%;
     max-width: 600px;
     overflow-y: auto;
 }
@@ -22,31 +22,32 @@ body {
 h1 {
     color: #0056b3;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .input-section {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
+    grid-template-columns: 1fr;
+    gap: 10px;
 }
 
 label {
-    grid-column: span 2;
     font-weight: bold;
+    margin-bottom: 5px;
 }
 
 input {
-    grid-column: span 2;
-    padding: 10px;
+    padding: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #f9f9f9;
-    font-size: 16px;
+    font-size: 14px;
+    width: 80%; /* Adjusted width */
 }
 
 button {
     margin-top: 20px;
-    padding: 15px 30px;
+    padding: 10px 20px;
     border: none;
     border-radius: 5px;
     background-color: #0056b3;
@@ -80,4 +81,15 @@ button:hover {
     margin: 0;
     font-size: 18px;
     color: #0056b3;
+}
+
+@media (min-width: 600px) {
+    .input-section {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+    
+    .input-section label, .input-section input {
+        grid-column: span 2;
+    }
 }
