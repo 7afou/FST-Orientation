@@ -3,36 +3,40 @@ body {
     color: #333;
     font-family: Arial, sans-serif;
     margin: 0;
+    padding: 0;
 }
 
 .container {
-    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    width: 90%;
-    max-width: 600px;
-    margin: auto;
+    box-sizing: border-box;
 }
 
 h1 {
     color: #0056b3;
     margin-bottom: 20px;
-    text-align: center;
+}
+
+.input-section {
+    width: 100%;
+    margin-bottom: 20px;
 }
 
 input {
+    width: calc(100% - 20px);
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #f9f9f9;
     font-size: 16px;
-    width: calc(100% - 22px); /* Adjusted width */
     margin-bottom: 10px;
 }
 
 button {
-    margin-top: 20px;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -41,6 +45,7 @@ button {
     font-size: 16px;
     cursor: pointer;
     width: 100%;
+    margin-bottom: 20px;
 }
 
 button:hover {
@@ -48,18 +53,16 @@ button:hover {
 }
 
 .results-section {
-    margin-top: 20px;
+    width: 100%;
     padding: 20px;
     border-radius: 5px;
     background-color: #f1f1f1;
-    width: calc(100% - 40px); /* Adjusted width */
     overflow-y: auto; /* To enable scrolling if content exceeds */
 }
 
 .result-item {
     padding: 10px;
     border-bottom: 1px solid #ccc;
-    width: calc(100% - 20px); /* Adjusted width */
 }
 
 .result-item:last-child {
@@ -72,8 +75,21 @@ button:hover {
     color: #0056b3;
 }
 
-@media (max-width: 600px) {
-    input {
-        width: calc(100% - 20px); /* Adjusted width for smaller screens */
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.buttons button {
+    margin: 0 5px;
+}
+
+
+@media screen and (min-width: 600px) {
+    .container {
+        max-width: 600px;
+        margin: auto;
     }
 }

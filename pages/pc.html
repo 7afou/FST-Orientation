@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les Orientations Du PC</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 align="center">Les Orientations Du PC</h1>
+        <p align="center">Veuillez entrer les résultats de la première session seulement :</p>
+        <div id="input-section" class="input-section">
+            <label for="chimieS1">Moyenne Module Chimie [S1] :</label>
+            <input type="text" id="chimieS1" placeholder="Entrez la moyenne">
+            <label for="chimieS2">Moyenne Module Chimie [S2] :</label>
+            <input type="text" id="chimieS2" placeholder="Entrez la moyenne">
+            <label for="physiqueS1">Moyenne Module Physique [S1] :</label>
+            <input type="text" id="physiqueS1" placeholder="Entrez la moyenne">
+            <label for="physiqueS2">Moyenne Module Physique [S2] :</label>
+            <input type="text" id="physiqueS2" placeholder="Entrez la moyenne">
+            <label for="mathS1">Moyenne Module Math [S1] :</label>
+            <input type="text" id="mathS1" placeholder="Entrez la moyenne">
+            <label for="mathS2">Moyenne Module Math [S2] :</label>
+            <input type="text" id="mathS2" placeholder="Entrez la moyenne">
+            <label for="generalS1">Moyenne Générale [S1] :</label>
+            <input type="text" id="generalS1" placeholder="Entrez la moyenne">
+            <label for="generalS2">Moyenne Générale [S2] :</label>
+            <input type="text" id="generalS2" placeholder="Entrez la moyenne">
+        </div>
+        <button id="calculate-button" onclick="calculateResults()">Calculer</button>
+        <div id="results" class="results-section" style="display:none;" align="center">
+            <!-- Les résultats seront affichés ici -->
+        </div>
+    </div>
+    <script src="../scripts/pc.js"></script>
+</body>
+</html>
