@@ -22,6 +22,7 @@ function calculateResults() {
         <div class="result-item"><p>EEA | ${EEA.toFixed(4)} / 20</p></div>
         <div class="result-item"><p>TSER | ${TSER.toFixed(4)} / 20</p></div>
         <div class="result-item"><p>PF | ${PF.toFixed(4)} / 20</p></div>
+        <p></p>
         <button onclick="resetForm()">Recommencer</button>
     `;
 

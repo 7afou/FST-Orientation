@@ -26,6 +26,7 @@ function calculateResults() {
         <div class="result-item"><p>Biologie | ${Biologie.toFixed(4)} / 20</p></div>
         <div class="result-item"><p>Geologie | ${Geologie.toFixed(4)} / 20</p></div>
         <div class="result-item"><p>2P2E | ${_2P2E.toFixed(4)} / 20</p></div>
+        <p></p>
         <button onclick="resetForm()">Recommencer</button>
     `;
 
