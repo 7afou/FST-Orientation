@@ -1,12 +1,23 @@
+function convertCommaToDot(strNum) {
+    // Check if the input string contains a comma
+    if (strNum.includes(",")) {
+        // Replace the comma with a dot and return the updated string
+        return strNum.replace(",", ".");
+    } else {
+        // Return the original string if it doesn't contain a comma
+        return strNum;
+    }
+}
+
 function calculateResults() {
-    const mathS1 = parseFloat(document.getElementById('mathS1').value) || 0;
-    const mathS2 = parseFloat(document.getElementById('mathS2').value) || 0;
-    const physiqueS1 = parseFloat(document.getElementById('physiqueS1').value) || 0;
-    const physiqueS2 = parseFloat(document.getElementById('physiqueS2').value) || 0;
-    const infoS1 = parseFloat(document.getElementById('infoS1').value) || 0;
-    const infoS2 = parseFloat(document.getElementById('infoS2').value) || 0;
-    const generalS1 = parseFloat(document.getElementById('generalS1').value) || 0;
-    const generalS2 = parseFloat(document.getElementById('generalS2').value) || 0;
+    const mathS1 = parseFloat(convertCommaToDot(document.getElementById('mathS1').value)) || 0;
+    const mathS2 = parseFloat(convertCommaToDot(document.getElementById('mathS2').value)) || 0;
+    const physiqueS1 = parseFloat(convertCommaToDot(document.getElementById('physiqueS1').value)) || 0;
+    const physiqueS2 = parseFloat(convertCommaToDot(document.getElementById('physiqueS2').value)) || 0;
+    const infoS1 = parseFloat(convertCommaToDot(document.getElementById('infoS1').value)) || 0;
+    const infoS2 = parseFloat(convertCommaToDot(document.getElementById('infoS2').value)) || 0;
+    const generalS1 = parseFloat(convertCommaToDot(document.getElementById('generalS1').value)) || 0;
+    const generalS2 = parseFloat(convertCommaToDot(document.getElementById('generalS2').value)) || 0;
 
     const MIAGE = (2 * infoS1 + 2 * infoS2 + generalS1 + generalS2) / 6;
     const DA2I = (2 * infoS1 + 2 * infoS2 + generalS1 + generalS2) / 6;

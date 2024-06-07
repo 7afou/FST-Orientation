@@ -1,14 +1,25 @@
+function convertCommaToDot(strNum) {
+    // Check if the input string contains a comma
+    if (strNum.includes(",")) {
+        // Replace the comma with a dot and return the updated string
+        return strNum.replace(",", ".");
+    } else {
+        // Return the original string if it doesn't contain a comma
+        return strNum;
+    }
+}
+
 function calculateResults() {
-    const biologieS1 = parseFloat(document.getElementById('biologieS1').value) || 0;
-    const biologieS2 = parseFloat(document.getElementById('biologieS2').value) || 0;
-    const geologieS1 = parseFloat(document.getElementById('geologieS1').value) || 0;
-    const geologieS2 = parseFloat(document.getElementById('geologieS2').value) || 0;
-    const chimieS1 = parseFloat(document.getElementById('chimieS1').value) || 0;
-    const chimieS2 = parseFloat(document.getElementById('chimieS2').value) || 0;
-    const mathS1 = parseFloat(document.getElementById('mathS1').value) || 0;
-    const mathS2 = parseFloat(document.getElementById('mathS2').value) || 0;
-    const generalS1 = parseFloat(document.getElementById('generalS1').value) || 0;
-    const generalS2 = parseFloat(document.getElementById('generalS2').value) || 0;
+    const biologieS1 = parseFloat(convertCommaToDot(document.getElementById('biologieS1').value)) || 0;
+    const biologieS2 = parseFloat(convertCommaToDot(document.getElementById('biologieS2').value)) || 0;
+    const geologieS1 = parseFloat(convertCommaToDot(document.getElementById('geologieS1').value)) || 0;
+    const geologieS2 = parseFloat(convertCommaToDot(document.getElementById('geologieS2').value)) || 0;
+    const chimieS1 = parseFloat(convertCommaToDot(document.getElementById('chimieS1').value)) || 0;
+    const chimieS2 = parseFloat(convertCommaToDot(document.getElementById('chimieS2').value)) || 0;
+    const mathS1 = parseFloat(convertCommaToDot(document.getElementById('mathS1').value)) || 0;
+    const mathS2 = parseFloat(convertCommaToDot(document.getElementById('mathS2').value)) || 0;
+    const generalS1 = parseFloat(convertCommaToDot(document.getElementById('generalS1').value)) || 0;
+    const generalS2 = parseFloat(convertCommaToDot(document.getElementById('generalS2').value)) || 0;
 
     const IPG = (geologieS1 + geologieS2 + chimieS1 + chimieS2 + mathS1 + mathS2 + generalS1 + generalS2) / 8;
     const ABC = (biologieS1 + biologieS2 + chimieS1 + chimieS2 + generalS1 + generalS2) / 6;

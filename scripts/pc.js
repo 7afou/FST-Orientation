@@ -1,12 +1,24 @@
+function convertCommaToDot(strNum) {
+    // Check if the input string contains a comma
+    if (strNum.includes(",")) {
+        // Replace the comma with a dot and return the updated string
+        return strNum.replace(",", ".");
+    } else {
+        // Return the original string if it doesn't contain a comma
+        return strNum;
+    }
+}
+
 function calculateResults() {
-    const chimieS1 = parseFloat(document.getElementById('chimieS1').value) || 0;
-    const chimieS2 = parseFloat(document.getElementById('chimieS2').value) || 0;
-    const physiqueS1 = parseFloat(document.getElementById('physiqueS1').value) || 0;
-    const physiqueS2 = parseFloat(document.getElementById('physiqueS2').value) || 0;
-    const mathS1 = parseFloat(document.getElementById('mathS1').value) || 0;
-    const mathS2 = parseFloat(document.getElementById('mathS2').value) || 0;
-    const generalS1 = parseFloat(document.getElementById('generalS1').value) || 0;
-    const generalS2 = parseFloat(document.getElementById('generalS2').value) || 0;
+    // Get the input values and convert commas to dots
+    const chimieS1 = parseFloat(convertCommaToDot(document.getElementById('chimieS1').value)) || 0;
+    const chimieS2 = parseFloat(convertCommaToDot(document.getElementById('chimieS2').value)) || 0;
+    const physiqueS1 = parseFloat(convertCommaToDot(document.getElementById('physiqueS1').value)) || 0;
+    const physiqueS2 = parseFloat(convertCommaToDot(document.getElementById('physiqueS2').value)) || 0;
+    const mathS1 = parseFloat(convertCommaToDot(document.getElementById('mathS1').value)) || 0;
+    const mathS2 = parseFloat(convertCommaToDot(document.getElementById('mathS2').value)) || 0;
+    const generalS1 = parseFloat(convertCommaToDot(document.getElementById('generalS1').value)) || 0;
+    const generalS2 = parseFloat(convertCommaToDot(document.getElementById('generalS2').value)) || 0;
 
     const IPG = (chimieS1 + chimieS2 + physiqueS1 + physiqueS2 + generalS1 + generalS2) / 6;
     const ABC = (2 * chimieS1 + 2 * chimieS2 + generalS1 + generalS2) / 6;
