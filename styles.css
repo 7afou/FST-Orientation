@@ -1,3 +1,5 @@
+/* I forgot what half of these things do, but pretty sure they are useless*/
+
 body {
     background-color: #f0f0f0;
     color: #333;
@@ -9,6 +11,15 @@ body {
     min-height: 100vh;
     position: relative;
 }
+
+.hidden {
+    display: none;
+}
+
+.option-button.hidden {
+    display: none;
+}
+
 
 .container {
     display: flex;
