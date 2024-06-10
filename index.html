@@ -9,12 +9,23 @@
 <body>
     <div class="container">
         <h1 id="FST" align="center">FST-Orientation</h1>
-        <div id ="selection-box" class="selection-box">
-            <h3>Veuillez choisir votre filière :</h3>
+        <div id="licence" class="licence">
+            <h3 align="center">Veuillez choisir votre année actuelle :</h3>
+            <button onclick="showYear('L1')">1ère année licence</button>
+            <button onclick="showYear('L2')">2ème année licence</button>
+        </div> 
+        <div id ="selection-box" class="selection-box hidden">
+            <h3 align="center">Veuillez choisir votre filière actuelle :</h3>
             <button onclick="showInputs('BG')">BG</button>
             <button onclick="showInputs('PC')">PC</button>
             <button onclick="showInputs('MPI')">MPI</button>     
         </div>
+        <div id="selection-box2" class="selection-box2 hidden">
+            <h3 align="center">Veuillez choisir votre filière actuelle :</h3>
+            <button onclick="showInputs('BIO')">BIO</button>
+            <button onclick="showInputs('GÉO')">GÉO</button>
+            <button onclick="showInputs('MAI')">MAI</button>
+        </div>        
         <div id="inputs" class="input-section hidden"></div>
         <!--Filled With javascript, I hope-->
         <div id="results" class="results-section hidden" align="center"></div>
