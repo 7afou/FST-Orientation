@@ -1,4 +1,4 @@
-// I Hope i odn't need to re-read this again :(
+// I Hope i won't need to re-read this again :(
 
 let currentType = '';
 let currentYear = '';
@@ -16,6 +16,7 @@ function showInputs(type) {
     document.getElementById('FST').innerHTML = `Les Orientations du ${type}`;
 }
 
+// change the header to the choosen filiere
 function showYear(Year) {
     currentYear = Year;
     if (currentYear === 'L1') {
@@ -27,6 +28,7 @@ function showYear(Year) {
     }
 }
 
+// Show the necessary modules to be filled
 function generateInputs(type) {
     let inputs = [];
     const message = '<p align="center">Veuillez saisir les moyennes des modules suivants (première session uniquement).</p>';
@@ -185,7 +187,7 @@ function calculateResultsBG() {
         <div class="result-item"><p>Geologie | ${Geologie.toFixed(4)} / 20</p></div>
         <div class="result-item"><p>2P2E | ${_2P2E.toFixed(4)} / 20</p></div>
         <p></p>
-        <button onclick="restart()">Recommencer</button>
+        <button onclick="showrestart()">Recommencer</button>
     `;
 
     return resultsHTML;
@@ -222,7 +224,7 @@ function calculateResultsPC() {
         <div class="result-item"><p>SP | ${SP.toFixed(4)} / 20</p></div>
         <div class="result-item"><p>2P2E | ${_2P2E.toFixed(4)} / 20</p></div>
         <p></p>
-        <button onclick="restart()">Recommencer</button>
+        <button onclick="showrestart()">Recommencer</button>
     `;
 
     return resultsHTML;
@@ -254,7 +256,7 @@ function calculateResultsMPI() {
         <div class="result-item"><p>TSER | ${TSER.toFixed(4)} / 20</p></div>
         <div class="result-item"><p>PF | ${PF.toFixed(4)} / 20</p></div>
         <p></p>
-        <button onclick="restart()">Recommencer</button>
+        <button onclick="showrestart()">Recommencer</button>
     `;
 
     return resultsHTML;
@@ -278,7 +280,7 @@ function calculateResultsBIO() {
         <div class="result-item"><p>BMP | ${BMP.toFixed(4)} / 20</p></div>
         <div class="result-item"><p>BOE | ${BOE.toFixed(4)} / 20</p></div>
         <p></p>
-        <button onclick="restart()">Recommencer</button>
+        <button onclick="showrestart()">Recommencer</button>
     `;
 
     return resultsHTML;
@@ -301,7 +303,7 @@ function calculateResultsGÉO() {
         <div class="result-item"><p>MINE | ${MINE.toFixed(4)} / 20</p></div>
         <div class="result-item"><p>GEOS | ${GEOS.toFixed(4)} / 20</p></div>
         <p></p>
-        <button onclick="restart()">Recommencer</button>
+        <button onclick="showrestart()">Recommencer</button>
     `;
 
     return resultsHTML;
@@ -323,31 +325,32 @@ function calculateResultsMAI() {
         <div class="result-item"><p>MI | ${MI.toFixed(4)} / 20</p></div>
         <div class="result-item"><p>MA | ${MA.toFixed(4)} / 20</p></div>
         <p></p>
-        <button onclick="restart()">Recommencer</button>
+        <button onclick="showrestart()">Recommencer</button>
     `;
 
     return resultsHTML;
 }
 
-function restart() {
-    let choice = prompt("Voulez-vous revenir à la section des saisies (1) ou recommencer depuis le début (2)?");
+// Show the restard div
+function showrestart() {
+    document.getElementById('results').innerHTML = '';
+    document.getElementById('results').classList.add('hidden');
+    document.getElementById('restartd').classList.remove('hidden');
+}
+
+function restart(choice) {
     if (choice === '1') {
         // User chose to go back to the input section
-        document.getElementById('results').innerHTML = '';
-        document.getElementById('results').classList.add('hidden');
         document.getElementById('inputs').innerHTML = generateInputs(currentType);
         document.getElementById('inputs').classList.remove('hidden');
+        document.getElementById('restartd').classList.add('hidden');
     } else if (choice === '2') {
         // User chose to restart from the beginning
         currentType = '';
         currentYear = '';
         document.getElementById('licence').classList.remove('hidden');
-        document.getElementById('results').innerHTML = '';
-        document.getElementById('results').classList.add('hidden');
         document.getElementById('FST').innerHTML = "FST-Orientation";
         document.getElementById('footer-text').classList.remove('hidden');
-    }
-    else {
-        // Do nothing if the choice is neither '1' nor '2'
+        document.getElementById('restartd').classList.add('hidden');
     }
 }
