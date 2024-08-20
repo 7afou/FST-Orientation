@@ -1,4 +1,5 @@
 // I Hope i won't need to re-read this again :(
+// Useless comment
 
 let currentType = '';
 let currentYear = '';
